@@ -10,7 +10,9 @@ function duplicate(allData, newData) {
     let index = allData.findIndex((product) => product.id === newData.id);
 
     if (val === undefined && index === -1) {
-        return newData;
+        allData.push(newData);
+        let json = JSON.stringify(allData);
+        localStorage.setItem("cartProducts", json);
     }
     else {
         val.quantity = newData.quantity;
@@ -26,13 +28,7 @@ function setItem(data) {
     if (localStorage.getItem("cartProducts") !== null) {
         let fetchData = localStorage.getItem("cartProducts");
         let convert = JSON.parse(fetchData);
-        let isDuplicate = duplicate(convert, data);
-        
-        if (isDuplicate !== undefined) {
-            convert.push(isDuplicate);
-            let json = JSON.stringify(convert);
-            localStorage.setItem("cartProducts", json);
-        }
+        duplicate(convert, data);
     }
     else {
         let store = [];
