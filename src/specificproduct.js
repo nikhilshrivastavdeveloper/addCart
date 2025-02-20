@@ -76,8 +76,11 @@ document.addEventListener("DOMContentLoaded",showProductDetailsById)
 //below code run only when user click on add to cart button;
 function addCart(ele) {
     if (ele.tagName === "BUTTON" && ele.innerText === "Add To Cart") {
+        // let origin = window.location.origin;
+        // window.location.href = `${origin}/card.html?q=${ele.id}&quantity=${span.innerText}`; 
         let origin = window.location.origin;
-        window.location.href = `${origin}/card.html?q=${ele.id}&quantity=${span.innerText}`;   
+        let pathname = window.location.pathname;
+        window.location.href = `${origin}/card.html?q=${ele.id}&quantity=${span.innerText}`; 
     }
 }
 
