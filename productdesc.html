@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: rgb(225, 225, 0);
+        }
+
+        .cartbtn {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 0px 5px;
+        }
+
+        .cartbtn a {
+            display: inline-block;
+            background-color: rgb(255, 0, 0);
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        #show-SingleProduct-Details {
+            background-color: white;
+            padding: 10px;
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            /* display: none; */
+        }
+
+        #image {
+            width: 35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #image img {
+            width: 100%;
+        }
+
+        #product-information {
+            width: 65%;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #product-information p {
+            font-size: 14px;
+        }
+
+        #other-element{
+            display: flex;
+            justify-content: space-between;
+            align-items:baseline;
+        }
+
+        #other-element #decrease,#increase{
+            background-color: rgb(16, 219, 16);
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            width: 35px;
+            height: 25px;
+        }
+
+        #product-information  button.add-cart{
+            display: block;
+            width: 85px;
+            height: 35px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(16, 219, 16);
+            transition: all 0.5s ease;
+            margin-top: 10px;
+        }
+
+        #product-information button.add-cart:hover {
+            background-color: rgb(0, 251, 0);
+        }
+
+        @media screen and (max-width:768px) {
+            .cartbtn a {
+                padding: 8px 13px;
+            }
+
+            #show-SingleProduct-Details {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            #image,
+            #product-information {
+                width: 100%;
+                padding: 0;
+            }
+
+            #image {
+                display: block;
+                margin: 0 auto;
+            }
+
+            #product-information h1 {
+                font-size: 2.5vh;
+            }
+
+            #product-information h3 {
+                font-size: 16px;
+            }
+
+            #product-information p {
+                margin: 5px 0;
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (min-width:769px) and (max-width:1099px) {
+            #image {
+                width: 50%;
+            }
+
+            #product-information {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cartbtn"><a href="index.html">Home Page</a><a href="card.html">View Cart</a></div>
+
+    <div id="show-SingleProduct-Details">
+        <div id="image"></div>
+        <div id="product-information">
+                <div id="heading"></div>
+                <div id="price"></div>
+                <div id="desc"></div>
+                <div id="other-element">
+                        <div id="quantity-box">
+                            <button id="decrease">-</button>
+                            <span id="quantity"></span>
+                            <button id="increase">+</button>
+                        </div>
+                </div>
+        </div>
+    </div>
+    
+
+    <script src="./src/specificproduct.js" type="module"></script>
+</body>
+
+</html>
