@@ -6,7 +6,8 @@ function relocate(ele) {
         //https://nikhilshrivastavdeveloper.github.io//addCart//index.html
         let origin = window.location.origin;
         let pathname = window.location.pathname;
-        window.location.href = `${origin}/productdesc.html?q=${ele.parentNode.id}`;
+        // window.location.href = `${origin}/productdesc.html?q=${ele.parentNode.id}`;
+        window.location.href = `${origin}/../../productdesc.html?q=${ele.parentNode.id}`
     }
 }
 
