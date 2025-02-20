@@ -45,7 +45,7 @@ function showProductDetailsById1() {
 //this function run when window reload so that add to product data will be retain
 
 function showLocalStorageData(val) {
-    if (Array.isArray(val) && val.length > 0) {
+    if (val.length > 0) {
         cardBox.innerHTML = "";
         val.forEach((singalData) => {
             let card = document.createElement("div");
@@ -87,14 +87,12 @@ function showLocalStorageData(val) {
 function updateUI() {
     let fetchDataFromLocalStorage = getItem();
 
-    if (fetchDataFromLocalStorage) {
-        showLocalStorageData(fetchDataFromLocalStorage);
-    }
+    showLocalStorageData(fetchDataFromLocalStorage);
 }
 
 function removeProduct(ID) {
     let listProduct = getItem();
-    let find = listProduct.findIndex((val) => val.id == ID);
+    let find = listProduct.findIndex((val) => val.id === Number(ID));
     listProduct.splice(find, 1);
     newItemAfterRemove(listProduct);
     showLocalStorageData(listProduct);
@@ -116,7 +114,7 @@ cardBox.addEventListener("click", (e) => {
     }
 })
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
     showProductDetailsById1();
     updateUI()
     updateTotalPrice()
