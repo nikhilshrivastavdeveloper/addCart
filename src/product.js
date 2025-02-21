@@ -49,6 +49,13 @@ const products = [
         price: 749
     },
     {
+        id: 8,
+        image: "images/bag8.jpg",
+        name: "Men Wallet",
+        desc: "Groove to your favorite songs for hours on end flaunting the boAt Airdopes Alpha Earbuds. boAt's IWPTM tech speeds up pairing so there no time lost for your entertainment. The large 13 mm dual drivers pump out high-octane boAt Signature sound making these earbuds truly an alpha. Long rides are no longer tedious when you can catch up on podcasts or new OTT releases, courtesy of the immense playback time of up to 35 hours. Additionally, ASAPTM charge ensures that the fun never stops with up to 120 minutes of playtime when charged for merely 10 minutes. Moreover, BEASTTM mode eliminates lag with 50 ms low latency infusing a dose of adrenaline into your gaming sessions. With dynamic sound in sync, visuals feel realistic.",
+        price: 135
+    },
+    {
         id: 9,
         image: "images/yoga.jpg",
         name: "Yoga Mat",
