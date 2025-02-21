@@ -107,11 +107,19 @@ cardBox.addEventListener("click", (e) => {
 
     //redirect to user on productdesc.html so that user can see description of product again
     if (e.target.tagName === "IMG") {
-        let origin = window.location.origin;
-        let pathname = window.location.pathname.slice(0,8);
+
         let id = e.target.parentNode.id;
         let quantity = e.target.parentElement.children[3].children[0].innerText
-        window.location.href = `${origin}${pathname}/productdesc.html?q=${id}&quantity=${quantity}`;
+
+        let origin;
+        if (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") {
+            origin = window.location.origin;
+            window.location.href = `${origin}/productdesc.html?q=${id}&quantity=${quantity}`;
+        }
+        else {
+            origin = window.location.origin;
+            window.location.href = `${origin}${pathname}/productdesc.html?q=${id}&quantity=${quantity}`;
+        }
     }
 })
 
