@@ -80,7 +80,7 @@ function addCart(ele) {
         // window.location.href = `${origin}/card.html?q=${ele.id}&quantity=${span.innerText}`; 
         let origin = window.location.origin;
         let pathname = window.location.pathname;
-        window.location.href = `${origin}/card.html?q=${ele.id}&quantity=${span.innerText}`; 
+        window.location.href = `${origin}${pathname}/card.html?q=${ele.id}&quantity=${span.innerText}`; 
     }
 }
 
