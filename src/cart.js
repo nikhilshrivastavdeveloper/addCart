@@ -118,7 +118,7 @@ cardBox.addEventListener("click", (e) => {
         }
         else {
             origin = window.location.origin;
-            window.location.href = `${origin}${pathname}/productdesc.html?q=${id}&quantity=${quantity}`;
+            window.location.href = `${origin}/productdesc.html?q=${id}&quantity=${quantity}`;
         }
     }
 })
