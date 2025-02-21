@@ -79,7 +79,7 @@ function addCart(ele) {
         // let origin = window.location.origin;
         // window.location.href = `${origin}/card.html?q=${ele.id}&quantity=${span.innerText}`; 
         let origin = window.location.origin;
-        let pathname = window.location.pathname;
+        let pathname = window.location.pathname.slice(0,8);
         window.location.href = `${origin}${pathname}/card.html?q=${ele.id}&quantity=${span.innerText}`; 
     }
 }
