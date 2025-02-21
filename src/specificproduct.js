@@ -1,6 +1,7 @@
 import { getProductById } from "./product.js";
 import { formatPrice } from "./formatPrice.js";
 
+let parent = document.getElementById("show-SingleProduct-Details");
 let imageBox = document.querySelector("#image");
 let productInfo = document.getElementById("product-information");
 let heading = document.querySelector("#heading");
@@ -36,6 +37,8 @@ function updateUI(data, id) {
     addCart.classList.add("add-cart")
     addCart.setAttribute("id", id);
     other.appendChild(addCart);
+
+    parent.style.visibility = "visible";
 }
 
 function getValueFromURL() {
