@@ -38,7 +38,7 @@ function updateUI(data, id) {
     addCart.setAttribute("id", id);
     other.appendChild(addCart);
 
-    parent.style.visibility = "visible";
+    parent.style.display = "flex";//show and hide parent container
 }
 
 function getValueFromURL() {
